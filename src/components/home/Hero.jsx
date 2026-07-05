@@ -23,14 +23,6 @@ export default function Hero({ settings }) {
 
   return (
     <section ref={ref} className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden border-b border-border">
-      {/* ghost team number following cursor */}
-      <span
-        className="pointer-events-none fixed z-10 font-mono text-[10vw] font-bold text-foreground/[0.04] select-none hidden md:block"
-        style={{ transform: `translate(${numberPos.x - 120}px, ${numberPos.y - 80}px)` }}
-      >
-        #30695
-      </span>
-
       {/* vertical spine */}
       <div className="absolute left-1/2 top-0 bottom-0 w-px blueprint-line opacity-40 hidden md:block" />
 
