@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
-import { LayoutDashboard, Users, Clock, Images, BarChart3, Building2, Settings, Inbox, LogOut, ExternalLink, HeartHandshake } from "lucide-react";
+import { LayoutDashboard, Users, Clock, Images, BarChart3, Building2, Settings, Inbox, LogOut, ExternalLink, HeartHandshake, Lock } from "lucide-react";
 
 const ALLOWED_ADMIN_EMAIL = "aayanjafri73@gmail.com";
+const ADMIN_PASSWORD = "ihsan30695";
 
 const NAV = [
   { label: "Dashboard", path: "/admin", icon: LayoutDashboard, exact: true },
@@ -20,6 +21,9 @@ const NAV = [
 export default function AdminLayout() {
   const [user, setUser] = useState(null);
   const [checked, setChecked] = useState(false);
+  const [pwUnlocked, setPwUnlocked] = useState(false);
+  const [pwInput, setPwInput] = useState("");
+  const [pwError, setPwError] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -41,10 +45,51 @@ export default function AdminLayout() {
     window.location.href = "/login";
   };
 
+  const submitPassword = (e) => {
+    e.preventDefault();
+    if (pwInput === ADMIN_PASSWORD) {
+      setPwUnlocked(true);
+      setPwError(false);
+    } else {
+      setPwError(true);
+    }
+  };
+
   if (!checked) {
     return (
       <div className="fixed inset-0 grid place-items-center bg-background">
         <div className="mono-tag animate-pulse">[AUTHENTICATING...]</div>
+      </div>
+    );
+  }
+
+  if (!pwUnlocked) {
+    return (
+      <div className="fixed inset-0 grid place-items-center bg-background px-6">
+        <form onSubmit={submitPassword} className="w-full max-w-sm border border-border p-8">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="grid place-items-center w-9 h-9 border border-foreground font-mono text-xs font-bold">ii</span>
+            <div className="leading-none">
+              <span className="text-sm font-bold tracking-tight block">ADMIN ACCESS</span>
+              <span className="mono-tag mt-1 block">#30695</span>
+            </div>
+          </div>
+          <label className="mono-tag block mb-2">[ADMIN_PASSWORD]</label>
+          <div className="relative">
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <input
+              type="password"
+              autoFocus
+              value={pwInput}
+              onChange={(e) => { setPwInput(e.target.value); setPwError(false); }}
+              className="field-dark pl-9"
+              placeholder="••••••••"
+            />
+          </div>
+          {pwError && <p className="mono-tag text-destructive mt-3">[ACCESS_DENIED]</p>}
+          <button type="submit" className="btn-primary w-full mt-6">UNLOCK</button>
+          <button type="button" onClick={() => navigate("/")} className="mono-tag mt-4 hover:text-primary transition-colors block">← BACK_TO_SITE</button>
+        </form>
       </div>
     );
   }
