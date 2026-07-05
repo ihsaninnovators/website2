@@ -54,25 +54,7 @@ export default function Hero({ settings }) {
           </div>
         </div>
 
-        <div className="md:col-span-5">
-          <div
-            className="relative aspect-[4/5] border border-border overflow-hidden"
-            style={{ transform: `perspective(1000px) rotateY(${mouse.x * 4}deg) rotateX(${-mouse.y * 4}deg)` }}
-          >
-            {settings?.hero_image_url ? (
-              <img src={settings.hero_image_url} alt="Robot component" className="w-full h-full object-cover" />
-            ) : (
-              <div className="w-full h-full bg-secondary grid place-items-center">
-                <span className="mono-tag">[IMAGE_PENDING]</span>
-              </div>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 flex justify-between">
-              <span className="mono-tag text-foreground/70">[ROBOT.01]</span>
-              <span className="mono-tag text-foreground/70">[LIVE]</span>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       {/* system status strip */}
