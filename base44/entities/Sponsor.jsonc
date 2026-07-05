@@ -1,0 +1,29 @@
+{
+  "name": "Sponsor",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "logo_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "Logo URL"
+    },
+    "link_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "Link URL"
+    },
+    "display_order": {
+      "type": "number",
+      "title": "Display Order",
+      "default": 0
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "collection_name": "Sponsor"
+}

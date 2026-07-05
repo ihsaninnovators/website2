@@ -1,0 +1,41 @@
+{
+  "name": "GalleryItem",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "image_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "Image URL"
+    },
+    "component_id": {
+      "type": "string",
+      "title": "Component ID",
+      "description": "Technical metadata tag e.g. ARM_01",
+      "default": "ROBOT_01"
+    },
+    "material": {
+      "type": "string",
+      "title": "Material",
+      "description": "Technical metadata e.g. CNC_ALUMINUM",
+      "default": "CARBON_FIBER"
+    },
+    "display_order": {
+      "type": "number",
+      "title": "Display Order",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "image_url"
+  ],
+  "collection_name": "GalleryItem"
+}

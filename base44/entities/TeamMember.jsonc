@@ -1,0 +1,64 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "role": {
+      "type": "string",
+      "title": "Role",
+      "description": "e.g. Mechanical Captain, Programming Captain, Mentor, Team Member"
+    },
+    "group": {
+      "type": "string",
+      "title": "Group",
+      "enum": [
+        "Captain",
+        "Mentor",
+        "Member"
+      ],
+      "default": "Member"
+    },
+    "sub_team": {
+      "type": "string",
+      "title": "Sub-Team",
+      "enum": [
+        "Mechanical",
+        "Programming",
+        "Business/Outreach",
+        "CAD",
+        "Admin",
+        "Mentor"
+      ],
+      "default": "Mechanical"
+    },
+    "bio": {
+      "type": "string",
+      "title": "Bio"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "photo_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "Photo URL"
+    },
+    "display_order": {
+      "type": "number",
+      "title": "Display Order",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "role",
+    "group",
+    "sub_team"
+  ],
+  "collection_name": "TeamMember"
+}

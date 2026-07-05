@@ -1,0 +1,25 @@
+{
+  "name": "ContactSubmission",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "message"
+  ],
+  "collection_name": "ContactSubmission"
+}

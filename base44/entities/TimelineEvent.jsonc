@@ -1,0 +1,29 @@
+{
+  "name": "TimelineEvent",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "date": {
+      "type": "string",
+      "title": "Date Label",
+      "description": "e.g. June 2020, Season 2023-24"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "display_order": {
+      "type": "number",
+      "title": "Display Order",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "date"
+  ],
+  "collection_name": "TimelineEvent"
+}

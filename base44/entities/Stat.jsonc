@@ -1,0 +1,31 @@
+{
+  "name": "Stat",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "e.g. Outreach Hours, Awards Won"
+    },
+    "value": {
+      "type": "number",
+      "title": "Value"
+    },
+    "suffix": {
+      "type": "string",
+      "title": "Suffix",
+      "description": "e.g. +, %, hrs",
+      "default": ""
+    },
+    "display_order": {
+      "type": "number",
+      "title": "Display Order",
+      "default": 0
+    }
+  },
+  "required": [
+    "label",
+    "value"
+  ],
+  "collection_name": "Stat"
+}

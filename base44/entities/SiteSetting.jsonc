@@ -1,0 +1,66 @@
+{
+  "name": "SiteSetting",
+  "type": "object",
+  "properties": {
+    "team_number": {
+      "type": "string",
+      "title": "Team Number",
+      "default": "#30695"
+    },
+    "location": {
+      "type": "string",
+      "title": "Location",
+      "default": "San Jose, CA"
+    },
+    "mission_statement": {
+      "type": "string",
+      "title": "Mission Statement",
+      "default": "Preparing tomorrow's innovators for today's challenges."
+    },
+    "about_text": {
+      "type": "string",
+      "title": "About / Story Text"
+    },
+    "contact_email": {
+      "type": "string",
+      "format": "email",
+      "title": "Contact Email",
+      "default": "ihsaninnovators@gmail.com"
+    },
+    "contact_phone": {
+      "type": "string",
+      "title": "Contact Phone"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "instagram_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "Instagram URL"
+    },
+    "github_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "GitHub URL",
+      "default": "https://github.com/ihsaninnovators/ihsaninnovatorswebsite"
+    },
+    "youtube_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "YouTube URL"
+    },
+    "hero_image_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "Hero Image URL"
+    }
+  },
+  "required": [
+    "team_number",
+    "location",
+    "mission_statement"
+  ],
+  "collection_name": "SiteSetting"
+}
