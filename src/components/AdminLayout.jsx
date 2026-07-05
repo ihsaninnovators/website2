@@ -3,6 +3,8 @@ import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import { LayoutDashboard, Users, Clock, Images, BarChart3, Building2, Settings, Inbox, LogOut, ExternalLink } from "lucide-react";
 
+const ALLOWED_ADMIN_EMAIL = "aayanjafri73@gmail.com";
+
 const NAV = [
   { label: "Dashboard", path: "/admin", icon: LayoutDashboard, exact: true },
   { label: "Team Roster", path: "/admin/team", icon: Users },
