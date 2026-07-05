@@ -3,13 +3,12 @@ import { base44 } from "@/api/base44Client";
 import SectionHeading from "@/components/SectionHeading";
 import { Mail } from "lucide-react";
 
-const RAW = "https://raw.githubusercontent.com/ihsaninnovators/ihsaninnovatorswebsite/26636f86696bf0f2c832e7852726942e30232457/images";
 const PHOTO_FALLBACKS = {
-  "Nyel Umair": `${RAW}/nyelimage.jpg`,
-  "Aayan Jafri": `${RAW}/aayanimage.jpg`,
-  "Ammaar Ishtiaq": `${RAW}/ammaarimage.png`,
-  "Umair Shaheen": `${RAW}/umairimage.jpg`,
-  "Amaar Chughtai": `${RAW}/amaarimage.jpeg`,
+  "Nyel Umair": "/images/team/nyel.jpg",
+  "Aayan Jafri": "/images/team/aayan.jpg",
+  "Ammaar Ishtiaq": "/images/team/ammaar.png",
+  "Umair Shaheen": "/images/team/umair.jpg",
+  "Amaar Chughtai": "/images/team/amaar.jpeg",
 };
 const photoFor = (m) => m.photo_url || PHOTO_FALLBACKS[m.name];
 
