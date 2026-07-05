@@ -3,12 +3,22 @@ import { base44 } from "@/api/base44Client";
 import SectionHeading from "@/components/SectionHeading";
 import { Mail } from "lucide-react";
 
+const RAW = "https://raw.githubusercontent.com/ihsaninnovators/ihsaninnovatorswebsite/26636f86696bf0f2c832e7852726942e30232457/images";
+const PHOTO_FALLBACKS = {
+  "Nyel Umair": `${RAW}/nyelimage.jpg`,
+  "Aayan Jafri": `${RAW}/aayanimage.jpg`,
+  "Ammaar Ishtiaq": `${RAW}/ammaarimage.png`,
+  "Umair Shaheen": `${RAW}/umairimage.jpg`,
+  "Amaar Chughtai": `${RAW}/amaarimage.jpeg`,
+};
+const photoFor = (m) => m.photo_url || PHOTO_FALLBACKS[m.name];
+
 function MemberCard({ m }) {
   return (
     <article className="group border border-border p-6 hover:border-primary transition-colors duration-300 bg-background">
       <div className="aspect-square mb-5 overflow-hidden bg-secondary border border-border">
-        {m.photo_url ? (
-          <img src={m.photo_url} alt={m.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+        {photoFor(m) ? (
+          <img src={photoFor(m)} alt={m.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
         ) : (
           <div className="w-full h-full grid place-items-center">
             <span className="font-mono text-3xl font-bold text-muted-foreground">{m.name.split(" ").map(n=>n[0]).join("")}</span>
@@ -78,8 +88,8 @@ export default function TeamPreview() {
                 {teamMembers.map((m) => (
                   <div key={m.id} className="bg-background p-5 border border-transparent hover:border-primary transition-colors">
                     <div className="aspect-square mb-3 bg-secondary grid place-items-center overflow-hidden">
-                      {m.photo_url ? (
-                        <img src={m.photo_url} alt={m.name} className="w-full h-full object-cover grayscale" />
+                      {photoFor(m) ? (
+                        <img src={photoFor(m)} alt={m.name} className="w-full h-full object-cover grayscale" />
                       ) : (
                         <span className="font-mono text-xl font-bold text-muted-foreground">{m.name.split(" ").map(n=>n[0]).join("")}</span>
                       )}
