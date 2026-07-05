@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
-import { LayoutDashboard, Users, Clock, Images, BarChart3, Building2, Settings, Inbox, LogOut, ExternalLink } from "lucide-react";
+import { LayoutDashboard, Users, Clock, Images, BarChart3, Building2, Settings, Inbox, LogOut, ExternalLink, HeartHandshake } from "lucide-react";
 
 const ALLOWED_ADMIN_EMAIL = "aayanjafri73@gmail.com";
 
@@ -12,6 +12,7 @@ const NAV = [
   { label: "Gallery", path: "/admin/gallery", icon: Images },
   { label: "Statistics", path: "/admin/stats", icon: BarChart3 },
   { label: "Sponsors", path: "/admin/sponsors", icon: Building2 },
+  { label: "Outreach", path: "/admin/outreach", icon: HeartHandshake },
   { label: "Submissions", path: "/admin/submissions", icon: Inbox },
   { label: "Site Settings", path: "/admin/settings", icon: Settings },
 ];

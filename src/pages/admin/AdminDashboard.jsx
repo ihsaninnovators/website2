@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
-import { Users, Clock, Images, BarChart3, Building2, Inbox, ArrowRight } from "lucide-react";
+import { Users, Clock, Images, BarChart3, Building2, Inbox, ArrowRight, HeartHandshake } from "lucide-react";
 
 export default function AdminDashboard() {
   const [counts, setCounts] = useState({});
@@ -13,11 +13,12 @@ export default function AdminDashboard() {
       base44.entities.GalleryItem.list(),
       base44.entities.Stat.list(),
       base44.entities.Sponsor.list(),
+      base44.entities.OutreachProject.list(),
       base44.entities.ContactSubmission.list(),
-    ]).then(([t, tl, g, s, sp, c]) => {
+    ]).then(([t, tl, g, s, sp, o, c]) => {
       setCounts({
         TeamMember: t.length, TimelineEvent: tl.length, GalleryItem: g.length,
-        Stat: s.length, Sponsor: sp.length, ContactSubmission: c.length,
+        Stat: s.length, Sponsor: sp.length, OutreachProject: o.length, ContactSubmission: c.length,
       });
     }).catch(() => {});
   }, []);
@@ -28,6 +29,7 @@ export default function AdminDashboard() {
     { label: "Gallery Items", path: "/admin/gallery", icon: Images, entity: "GalleryItem" },
     { label: "Statistics", path: "/admin/stats", icon: BarChart3, entity: "Stat" },
     { label: "Sponsors", path: "/admin/sponsors", icon: Building2, entity: "Sponsor" },
+    { label: "Outreach Projects", path: "/admin/outreach", icon: HeartHandshake, entity: "OutreachProject" },
     { label: "Submissions", path: "/admin/submissions", icon: Inbox, entity: "ContactSubmission" },
   ];
 

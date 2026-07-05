@@ -1,0 +1,43 @@
+{
+  "name": "OutreachProject",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "image_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "Image URL"
+    },
+    "date_label": {
+      "type": "string",
+      "title": "Date Label",
+      "description": "e.g. Summer 2024, Ongoing"
+    },
+    "impact": {
+      "type": "string",
+      "title": "Impact Metric",
+      "description": "e.g. 500+ students reached"
+    },
+    "link_url": {
+      "type": "string",
+      "format": "uri",
+      "title": "Link URL"
+    },
+    "display_order": {
+      "type": "number",
+      "title": "Display Order",
+      "default": 0
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "collection_name": "OutreachProject"
+}

@@ -20,7 +20,7 @@ export default function Footer({ settings }) {
           <div className="md:col-span-3 md:col-start-7">
             <p className="mono-tag mb-4">[NAVIGATE]</p>
             <ul className="space-y-2">
-              {[["Home","/"],["Gallery","/gallery"],["Stats","/stats"],["Contact","/contact"],["Admin","/admin"]].map(([l,p]) => (
+              {[["Home","/"],["Gallery","/gallery"],["Outreach","/outreach"],["Stats","/stats"],["Contact","/contact"],["Admin","/admin"]].map(([l,p]) => (
                 <li key={p}><Link to={p} className="text-sm text-muted-foreground hover:text-primary transition-colors">{l}</Link></li>
               ))}
             </ul>
