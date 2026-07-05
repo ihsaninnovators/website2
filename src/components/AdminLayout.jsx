@@ -25,7 +25,13 @@ export default function AdminLayout() {
   useEffect(() => {
     base44.auth.isAuthenticated().then((authed) => {
       if (!authed) { navigate("/login"); return; }
-      base44.auth.me().then(setUser).catch(() => {}).finally(() => setChecked(true));
+      base44.auth.me().then((u) => {
+        if (u && u.email !== ALLOWED_ADMIN_EMAIL) {
+          navigate("/", { replace: true });
+          return;
+        }
+        setUser(u);
+      }).catch(() => {}).finally(() => setChecked(true));
     });
   }, [navigate]);
 
