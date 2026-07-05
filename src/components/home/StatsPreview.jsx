@@ -17,16 +17,15 @@ export default function StatsPreview() {
   return (
     <section className="border-b border-border py-20 md:py-32">
       <div className="max-w-[1600px] mx-auto px-6 md:px-10">
-        <SectionHeading tag="DIAGNOSTIC_CORE" title="By the numbers." />
+        <SectionHeading title="By the numbers." />
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-px bg-border">
           {stats.map((s) => (
             <div key={s.id} className="bg-background p-8 md:p-10 group">
-              <p className="mono-tag mb-6">[{s.label.toUpperCase().replace(/\s/g,"_")}]</p>
               <p className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-none">
                 <StatCounter value={s.value} suffix={s.suffix} />
               </p>
               <div className="mt-6 h-px w-full blueprint-line" />
-              <p className="mono-tag mt-3 text-foreground/70">{s.label}</p>
+              <p className="mt-3 text-sm text-muted-foreground">{s.label}</p>
             </div>
           ))}
         </div>

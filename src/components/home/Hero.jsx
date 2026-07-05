@@ -28,7 +28,6 @@ export default function Hero({ settings }) {
 
       <div className="max-w-[1600px] mx-auto w-full px-6 md:px-10 py-20 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         <div className="md:col-span-7">
-          <p className="mono-tag mb-6">[FTC {settings?.team_number || "#30695"} // {settings?.location || "SAN_JOSE_CA"}]</p>
           <h1 className="text-[15vw] md:text-[8rem] lg:text-[9rem] font-bold tracking-[-0.04em] leading-[0.85]">
             <span className="block">EMPOWERING</span>
             <span className="block text-muted-foreground">THE YOUTH</span>
@@ -49,22 +48,6 @@ export default function Hero({ settings }) {
 
       </div>
 
-      {/* system status strip */}
-      <div className="absolute bottom-0 inset-x-0 border-t border-border bg-background/60 backdrop-blur-sm">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-10 py-3 flex flex-wrap items-center justify-between gap-4">
-          {[
-            ["STATUS", "OPERATIONAL"],
-            ["SEASON", "2025-26"],
-            ["RANK", "COMPETING"],
-            ["LOCATION", settings?.location || "SAN_JOSE_CA"],
-          ].map(([k,v]) => (
-            <div key={k} className="flex items-center gap-2">
-              <span className="mono-tag text-primary/80">{k}</span>
-              <span className="mono-tag text-foreground">{v}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
   );
 }

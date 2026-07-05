@@ -14,7 +14,7 @@ export default function TimelinePreview() {
   return (
     <section className="border-b border-border py-20 md:py-32 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 md:px-10">
-        <SectionHeading tag="TIMELINE" title="The build, season by season." />
+        <SectionHeading title="The build, season by season." />
         <div className="mt-16 relative">
           {/* horizontal line */}
           <div className="absolute left-0 right-0 top-8 h-px blueprint-line hidden md:block" />
@@ -27,7 +27,6 @@ export default function TimelinePreview() {
                 <p className="mono-tag text-primary mb-2">{e.date}</p>
                 <h3 className="text-lg font-bold tracking-tight mb-2">{e.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{e.description}</p>
-                <span className="mono-tag mt-4 block opacity-50">[{String(i+1).padStart(2,"0")}/{String(events.length).padStart(2,"0")}]</span>
               </article>
             ))}
           </div>

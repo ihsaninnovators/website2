@@ -19,7 +19,6 @@ export default function PrintingService() {
       <div className="max-w-[1600px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-7">
-            <p className="mono-tag mb-5">[SERVICE // 3D_PRINTING]</p>
             <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.04em] leading-[0.95]">
               II 3D PRINT.<br /><span className="text-muted-foreground">CUSTOM PRINTS,</span><br /><span className="text-primary">COMMUNITY PRICED.</span>
             </h2>
@@ -47,11 +46,10 @@ export default function PrintingService() {
 
           <div className="md:col-span-5">
             <div className="border border-border p-6 md:p-8 h-full">
-              <p className="mono-tag mb-6">[MACHINE_SPECS]</p>
               <div className="space-y-5">
                 {SPECS.map(([k, v]) => (
                   <div key={k} className="border-b border-border pb-5 last:border-0 last:pb-0">
-                    <p className="mono-tag text-primary/80">{k}</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider">{k}</p>
                     <p className="font-mono text-sm mt-1">{v}</p>
                   </div>
                 ))}

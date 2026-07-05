@@ -21,14 +21,10 @@ export default function WhatWeDo() {
             return (
               <article key={s.id} className={`relative bg-background p-8 md:p-10 group hover:bg-secondary transition-colors duration-300 ${s.featured ? "md:col-span-1 lg:col-span-1 lg:row-span-1" : ""}`}>
                 <div className="flex items-start justify-between mb-8">
-                  <span className="mono-tag">[0{s.id}]</span>
                   <Icon className="text-muted-foreground group-hover:text-primary transition-colors" size={28} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-bold tracking-tight mb-4">{s.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{s.body}</p>
-                {s.featured && (
-                  <span className="absolute top-4 right-4 mono-tag text-primary">[SERVICE]</span>
-                )}
               </article>
             );
           })}

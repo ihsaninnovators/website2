@@ -56,7 +56,7 @@ export default function TeamPreview() {
     <section className="border-b border-border py-20 md:py-32">
       <div className="max-w-[1600px] mx-auto px-6 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <SectionHeading tag="OUR_TEAM" title="Captains, mentors, members." />
+          <SectionHeading title="Captains, mentors, members." />
           <p className="text-muted-foreground max-w-sm">Meet the people behind the machines — where passion meets expertise, and where the next generation of engineers is forged.</p>
         </div>
 
@@ -65,7 +65,7 @@ export default function TeamPreview() {
         ) : (
           <div className="space-y-16">
             <div>
-              <p className="mono-tag mb-6">[CAPTAINS // {captains.length}]</p>
+              <p className="mono-tag mb-6 text-primary">CAPTAINS</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
                 {captains.map((m) => (
                   <div key={m.id} className="bg-background"><MemberCard m={m} /></div>
@@ -74,7 +74,7 @@ export default function TeamPreview() {
             </div>
 
             <div>
-              <p className="mono-tag mb-6">[MENTORS_AND_COACHES // {mentors.length}]</p>
+              <p className="mono-tag mb-6 text-primary">MENTORS &amp; COACHES</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
                 {mentors.map((m) => (
                   <div key={m.id} className="bg-background"><MemberCard m={m} /></div>
@@ -83,7 +83,7 @@ export default function TeamPreview() {
             </div>
 
             <div>
-              <p className="mono-tag mb-6">[TEAM_MEMBERS // {teamMembers.length}]</p>
+              <p className="mono-tag mb-6 text-primary">TEAM MEMBERS</p>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-border">
                 {teamMembers.map((m) => (
                   <div key={m.id} className="bg-background p-5 border border-transparent hover:border-primary transition-colors">

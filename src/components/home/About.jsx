@@ -10,14 +10,12 @@ export default function About({ settings }) {
         </div>
         <div className="md:col-span-7 space-y-8">
           <div>
-            <p className="mono-tag mb-4">[MISSION_STATEMENT]</p>
             <p className="text-2xl md:text-3xl font-medium leading-snug tracking-tight">
               {settings?.mission_statement}
             </p>
           </div>
           <div className="h-px blueprint-line w-full" />
           <div>
-            <p className="mono-tag mb-4">[ORIGIN_STORY]</p>
             <p className="text-muted-foreground leading-relaxed text-lg">
               {settings?.about_text || "While in their high school robotics club, five friends with a shared passion for STEM saw the need for a team that prioritized real learning. They envisioned a space where young, like-minded students could foster creativity and innovation. This dream is now the Ihsan Innovators, FTC Team #30695, based in San Jose, CA."}
             </p>
